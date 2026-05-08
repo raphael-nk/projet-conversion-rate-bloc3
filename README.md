@@ -61,6 +61,10 @@ Le but est de construire un modèle capable de prédire la probabilité de conve
 
 ## **Installation & configuration**
 
+Le projet fournit :
+- `uv.lock` / `pyproject.toml` pour une installation reproductible via **uv**
+- `requirements.txt` (exporté depuis uv) pour une installation via **pip**
+
 ### **Option 1 (recommandée) - avec uv**
 
 ```bash
@@ -68,16 +72,17 @@ uv sync
 uv run jupyter lab # ou lancer le notebook
 ```
 
-### **Option 2 - avec pip**
+### **Option 2 - avec pip (à partir de requirements.txt)**
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip
-pip install -e .
+pip install -r requirements.txt
 jupyter lab # ou lancer le notebook 
 ```
 
+> Note : `requirements.txt` a été généré automatiquement (export uv).  
 ### **Paramètres pratiques**
 
 - Vérifier que le kernel Jupyter pointe vers l'environnement du projet.
